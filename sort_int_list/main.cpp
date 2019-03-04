@@ -1,13 +1,13 @@
 #include <iostream>
 #include "utility.h"
-#include "search_list.h"
+#include "sort_list.h"
 
 using namespace std;
 
 int main()
 {
-    Search_list l;
-    Shell<Search_list> sh(l);
+    Sort_list l;
+    Shell<Sort_list> sh(l);
     sh.main();
     return 0;
 }

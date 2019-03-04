@@ -5,6 +5,7 @@
 #include <vector>
 #include <algorithm>
 #include <fstream>
+#include <ctime>
 #define COMMAND_N 100
 using namespace std;
 
@@ -18,8 +19,16 @@ public:
     void print();
     void to_file();
     void stl_sort();
-    virtual void linear_search();
-    virtual void binary_search();
+    virtual void linear_search(){};
+    virtual void binary_search(){};
+    virtual void gen_rand(){};
+    virtual void bubble_sort(){};
+    virtual void select_sort(){};
+    virtual void insert_sort(){};
+    virtual void shell_sort(){};
+    virtual void merge_sort(){};
+    virtual void heap_sort(){};
+    virtual void quick_sort(){};
 protected:
     vector<int> data;
 };
@@ -75,15 +84,6 @@ void List::stl_sort()
     sort(data.begin(),data.end());
 }
 
-void List :: linear_search()
-{
-
-}
-
-void List::binary_search()
-{
-
-}
 
 #endif
 

@@ -17,19 +17,32 @@ public:
     void input();
     void print();
     void to_file();
-private:
+    void stl_sort();
+    virtual void linear_search(){};
+    virtual void binary_search(){};
+    virtual void gen_rand(){};
+    virtual void bubble_sort(){};
+    virtual void select_sort(){};
+    virtual void insert_sort(){};
+    virtual void shell_sort(){};
+    virtual void merge_sort(){};
+    virtual void heap_sort(){};
+    virtual void quick_sort(){};
+protected:
     vector<int> data;
 };
 
 List::List()
 {
-    norder = 3;
+    norder = 4;
     command[0] = "input";
     command[1] = "print";
     command[2] = "to_file";
+    command[3] = "stl_sort";
     method[0] = &List::input;
     method[1] = &List::print;
     method[2] = &List::to_file;
+    method[3] = &List::stl_sort;
 }
 
 
@@ -64,6 +77,12 @@ void List::to_file()
     out << endl;
     out.close();
 }
+
+void List::stl_sort()
+{
+    sort(data.begin(),data.end());
+}
+
 
 #endif
 

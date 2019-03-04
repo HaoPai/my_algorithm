@@ -1,8 +1,27 @@
 #ifndef _UTILITY_H_
 #define _UTILITY_H_
 #include <iostream>
-#include <stdlib.h>
+#include <fstream>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
+
+
+//function to  generate ramdom number to "data.txt"
+void rand_file(int n,int MIN,int MAX);
+
+void rand_file(int n,int MIN,int MAX)
+{
+    ofstream out("data.txt");
+    srand((unsigned int )time(NULL));
+    while(n>0){
+        int temp = rand()%(MAX - MIN) + MIN;
+        out << " " << temp;
+        n --;
+    }
+    out.close();
+}
+// class Shell
 const int max_command_num = 20;
 template <class Object>
 class Shell
